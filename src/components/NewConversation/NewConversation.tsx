@@ -225,7 +225,7 @@ export default function NewConversation() {
         <ContentLayout
             header={
                 <Header
-                    description="Upload your audio file to be processed by AWS HealthScribe"
+                    description="Upload your audio file to be processed by DR HealthScribe"
                     variant="awsui-h1-sticky"
                 >
                     New Conversation
@@ -233,12 +233,7 @@ export default function NewConversation() {
             }
         >
             <Container
-                header={
-                    <Header
-                        variant="h3"
-                        description="Note: AWS HealthScribe offers additional features not built into this demo, such as Custom Vocabulary, Content Removal, and more. This is available via the AWS console, API, or SDK."
-                    />
-                }
+                
             >
                 <form onSubmit={(e) => submitJob(e)}>
                     <Form

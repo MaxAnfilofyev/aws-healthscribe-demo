@@ -42,7 +42,9 @@ export default function NewConversation() {
 
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // is job submitting
     const [formError, setFormError] = useState<string | React.ReactElement[]>('');
-    const [jobName, setJobName] = useState<string>(''); // form - job name
+    const timestamp = new Date().getTime();
+    const conversationName = dayjs(timestamp).format('YY-MM-DD hh:mm A') + ' PatientName';
+    const [jobName, setJobName] = useState<string>(conversationName) ; // form - job name
     const [audioSelection, setAudioSelection] = useState<AudioSelection>('speakerPartitioning'); // form - audio selection
     // form - audio details
     const [audioDetails, setAudioDetails] = useState<AudioDetails>({
@@ -187,7 +189,7 @@ export default function NewConversation() {
                     type: 'success',
                     value: 100,
                     description: 'HealthScribe job submitted',
-                    additionalInfo: `Audio file successfully uploaded to S3 and submitted to HealthScribe at ${dayjs(
+                    additionalInfo: `Audio file successfully submitted to HealthScribe at ${dayjs(
                         startJob.MedicalScribeJob.StartTime
                     ).format('MM/DD/YYYY hh:mm A')}. Redirecting to conversation list in 5 seconds.`,
                 });

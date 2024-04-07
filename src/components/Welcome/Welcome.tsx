@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
-import React, { memo } from 'react';
+import React, { memo }, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ import { useAuthContext } from '@/store/auth';
 function Welcome() {
     const navigate = useNavigate();
     const { user } = useAuthContext();
+    const [authVisible, setAuthVisible] = useState(false); // authentication modal visibility
 
     function Content() {
         if (user) {
@@ -55,7 +56,7 @@ function Welcome() {
                 </TextContent>
             );
         } else {
-            return <Alert>Sign in for full functionality.</Alert>;
+            return <Alert><Link onFollow={() => setAuthVisible(true)}>Sign in</Link> for full functionality.</Alert>;
         }
     }
 

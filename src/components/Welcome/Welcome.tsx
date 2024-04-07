@@ -22,10 +22,9 @@ function Welcome() {
         if (user) {
             return (
                 <TextContent>
-                    <p>This sample ReactJS-based web app shows the art of the possible in using AWS HealthScribe.</p>
+                    <p>This app shows the art of the possible in using DR HealthScribe.</p>
                     <p>
-                        AWS HealthScribe is a HIPAA-eligible service empowering healthcare software vendors to build
-                        clinical applications that automatically generate clinical notes by analyzing patient-clinician
+                        DR HealthScribe is a HIPAA-eligible service empowering healthcare software providers to generate automatically clinical notes by analyzing patient-clinician
                         conversations.
                     </p>
                     <p>Currently this demo allows you to:</p>
@@ -50,7 +49,7 @@ function Welcome() {
                         </li>
                         <li>
                             <Link onFollow={() => navigate('/new')}>
-                                Submit your own audio file to AWS HealthScribe.
+                                Submit your own audio file to DR HealthScribe.
                             </Link>
                         </li>
                         <li>
@@ -65,21 +64,14 @@ function Welcome() {
                 </TextContent>
             );
         } else {
-            return <Alert>Log in for full functionality.</Alert>;
+            return <Alert>Sign in for full functionality.</Alert>;
         }
     }
 
     function Footer() {
         return (
             <Box textAlign="center" color="text-body-secondary" fontSize="body-s">
-                <p>Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.</p>
-                <p>
-                    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-                    associated documentation files (the &quot;Software&quot;), to deal in the Software without
-                    restriction, including without limitation the rights to use, copy, modify, merge, publish,
-                    distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
-                    Software is furnished to do so.
-                </p>
+                <p>Copyright Diagnostic Robotics, Inc. All Rights Reserved.</p>
                 <p>
                     THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
                     INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -92,7 +84,7 @@ function Welcome() {
     }
 
     return (
-        <ContentLayout header={<Header variant="h2">Demo Application Experience powered by AWS HealthScribe</Header>}>
+        <ContentLayout header={<Header variant="h2">HealthScribe Demo Application</Header>}>
             <Container footer={<Footer />}>
                 <Content />
             </Container>

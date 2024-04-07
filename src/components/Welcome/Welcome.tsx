@@ -41,11 +41,7 @@ function Welcome() {
                             <li>Structured medical terms</li>
                         </ul>
                         <li>
-                            Link the above medical terms to concepts in RxNorm, ICD-10-CM, and SNOMED CT using{' '}
-                            <Link external href="https://aws.amazon.com/comprehend/medical/">
-                                Amazon Comprehend Medical
-                            </Link>
-                            .
+                            Link the above medical terms to concepts in RxNorm, ICD-10-CM, and SNOMED CT.
                         </li>
                         <li>
                             <Link onFollow={() => navigate('/new')}>
@@ -53,12 +49,7 @@ function Welcome() {
                             </Link>
                         </li>
                         <li>
-                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>{' '}
-                            using{' '}
-                            <Link external href="https://aws.amazon.com/polly/">
-                                Amazon Polly
-                            </Link>
-                            .
+                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>.
                         </li>
                     </ul>
                 </TextContent>

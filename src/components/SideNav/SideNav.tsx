@@ -25,6 +25,7 @@ export default function SideNav({ activeHref }: SideNavProps) {
             text: 'New Conversation',
             href: '/new',
         },
+        /*
         { type: 'divider' },
         {
             type: 'link',
@@ -37,6 +38,7 @@ export default function SideNav({ activeHref }: SideNavProps) {
             text: 'Settings',
             href: '/settings',
         },
+        */
         { type: 'divider' },
         {
             type: 'link',

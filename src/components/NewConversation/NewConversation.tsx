@@ -275,7 +275,7 @@ export default function NewConversation() {
                                         >
                                             <Popover
                                                 header="Live Recording"
-                                                content="The audio file will be submitted to AWS HealthScribe after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
+                                                content="The audio file will be submitted to HealthScribe after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
                                             >
                                                 <StatusIndicator type="info">New</StatusIndicator>
                                             </Popover>

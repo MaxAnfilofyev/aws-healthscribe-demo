@@ -43,7 +43,7 @@ export default function NewConversation() {
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // is job submitting
     const [formError, setFormError] = useState<string | React.ReactElement[]>('');
     const timestamp = new Date().getTime();
-    const conversationName = dayjs(timestamp).format('YY-MM-DD hh:mm A') + ' PatientName';
+    const conversationName = dayjs(timestamp).format('YY-MM-DD_hh:mm_A') + '_PatientName';
     const [jobName, setJobName] = useState<string>(conversationName) ; // form - job name
     const [audioSelection, setAudioSelection] = useState<AudioSelection>('speakerPartitioning'); // form - audio selection
     // form - audio details

@@ -42,7 +42,9 @@ export default function NewConversation() {
 
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // is job submitting
     const [formError, setFormError] = useState<string | React.ReactElement[]>('');
-    const [jobName, setJobName] = useState<string>(''); // form - job name
+    const timestamp = new Date().getTime();
+    const conversationName = dayjs(timestamp).format('YY-MM-DD_hh:mm_A') + '_PatientName';
+    const [jobName, setJobName] = useState<string>(conversationName) ; // form - job name
     const [audioSelection, setAudioSelection] = useState<AudioSelection>('speakerPartitioning'); // form - audio selection
     // form - audio details
     const [audioDetails, setAudioDetails] = useState<AudioDetails>({
@@ -187,7 +189,7 @@ export default function NewConversation() {
                     type: 'success',
                     value: 100,
                     description: 'HealthScribe job submitted',
-                    additionalInfo: `Audio file successfully uploaded to S3 and submitted to HealthScribe at ${dayjs(
+                    additionalInfo: `Audio file successfully submitted to HealthScribe at ${dayjs(
                         startJob.MedicalScribeJob.StartTime
                     ).format('MM/DD/YYYY hh:mm A')}. Redirecting to conversation list in 5 seconds.`,
                 });
@@ -233,12 +235,7 @@ export default function NewConversation() {
             }
         >
             <Container
-                header={
-                    <Header
-                        variant="h3"
-                        description="Note: DR HealthScribe offers additional features not built into this demo, such as Custom Vocabulary, Content Removal, and more."
-                    />
-                }
+
             >
                 <form onSubmit={(e) => submitJob(e)}>
                     <Form
@@ -280,8 +277,9 @@ export default function NewConversation() {
                                         >
                                             <Popover
                                                 header="Live Recording"
+
                                                 content="The audio file will be submitted to DR HealthScribe after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
-                                            >
+
                                                 <StatusIndicator type="info">New</StatusIndicator>
                                             </Popover>
                                         </Box>

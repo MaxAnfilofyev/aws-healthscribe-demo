@@ -25,6 +25,7 @@ export default function SideNav({ activeHref }: SideNavProps) {
             text: 'New Conversation',
             href: '/new',
         },
+        /*
         { type: 'divider' },
         {
             type: 'link',
@@ -37,14 +38,30 @@ export default function SideNav({ activeHref }: SideNavProps) {
             text: 'Settings',
             href: '/settings',
         },
+        */
         { type: 'divider' },
         {
             type: 'link',
             text: 'Diagnostic Robotics',
-            href: 'https://diagnosticrobotics.com',
+
+            href: 'https://www.diagnosticrobotics.com/',
             external: true,
         },
-        
+        /***
+        {
+            type: 'link',
+            text: 'AWS for Health',
+            href: 'https://aws.amazon.com/health',
+            external: true,
+        },
+        {
+            type: 'link',
+            text: 'Amazon Web Services',
+            href: 'https://aws.amazon.com',
+            external: true,
+        },
+        ***/
+
     ];
 
     return (

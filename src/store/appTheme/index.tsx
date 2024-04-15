@@ -26,6 +26,27 @@ export const AppThemeContext = createContext<AppThemeContextType>({
     setAppThemeDensity: () => {},
 });
 
+export const CustomDarkModeExample = () => {
+    const [colorMode, setColorMode] = React.useState<ColorMode>('system');
+    const theme: Theme = {
+      name: 'dr-theme',
+      overrides: [
+        {
+          colorMode: 'dark',
+          tokens: {
+            colors: {
+              background: {
+                primary: { value: '{colors.purple.100}' },
+                secondary: { value: '{colors.purple.90}' },
+                tertiary: { value: '{colors.purple.80}' },
+              }
+            },
+          },
+        },
+      ],
+    };
+};
+
 export function useAppThemeContext() {
     const context = useContext(AppThemeContext);
     if (!context) {

@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ import { useAuthContext } from '@/store/auth';
 function Welcome() {
     const navigate = useNavigate();
     const { user } = useAuthContext();
+    const [authVisible, setAuthVisible] = useState(false); // authentication modal visibility
 
     function Content() {
         if (user) {
@@ -24,7 +25,10 @@ function Welcome() {
                 <TextContent>
                     <p>This app shows the art of the possible in using DR HealthScribe.</p>
                     <p>
-                        DR HealthScribe is a HIPAA-eligible service empowering healthcare providers to generate automatically clinical notes by analyzing patient-clinician conversations.
+
+                        DR HealthScribe is a HIPAA-eligible service empowering healthcare software providers to generate automatically clinical notes by analyzing patient-clinician
+                        conversations.
+
                     </p>
                     <p>Currently this demo allows you to:</p>
                     <ul>
@@ -48,13 +52,15 @@ function Welcome() {
                             </Link>
                         </li>
                         <li>
-                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file.</Link>{' '}
-                            
+
+                            <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>.
+
                         </li>
                     </ul>
                 </TextContent>
             );
         } else {
+
             return (
                 <div>
                     <TextContent>
@@ -94,6 +100,7 @@ function Welcome() {
   frameborder="0"></iframe>
                     <Alert>Register for full functionality.</Alert>
                 </div>);
+
         }
     }
 
@@ -113,7 +120,9 @@ function Welcome() {
     }
 
     return (
-        <ContentLayout header={<Header variant="h2">Demo Application Experience powered by DR HealthScribe</Header>}>
+
+        <ContentLayout header={<Header variant="h2">HealthScribe Demo Application</Header>}>
+
             <Container footer={<Footer />}>
                 <Content />
             </Container>

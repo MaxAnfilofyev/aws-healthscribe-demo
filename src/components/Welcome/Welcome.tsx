@@ -25,8 +25,10 @@ function Welcome() {
                 <TextContent>
                     <p>This app shows the art of the possible in using DR HealthScribe.</p>
                     <p>
+
                         DR HealthScribe is a HIPAA-eligible service empowering healthcare software providers to generate automatically clinical notes by analyzing patient-clinician
                         conversations.
+
                     </p>
                     <p>Currently this demo allows you to:</p>
                     <ul>
@@ -50,13 +52,55 @@ function Welcome() {
                             </Link>
                         </li>
                         <li>
+
                             <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file</Link>.
+
                         </li>
                     </ul>
                 </TextContent>
             );
         } else {
-            return <Alert><Link onFollow={() => setAuthVisible(true)}>Sign in</Link> for full functionality.</Alert>;
+
+            return (
+                <div>
+                    <TextContent>
+                        <p>This app shows the art of the possible in using DR HealthScribe.</p>
+                        <p>
+                            DR HealthScribe is a HIPAA-eligible service empowering healthcare software providers to generate automatically clinical notes by analyzing patient-clinician conversations.
+                        </p>
+                        <p>Currently this demo allows you to:</p>
+                        <ul>
+                            <li>
+                                <Link onFollow={() => navigate('/conversations')}>View HealthScribe results</Link>,
+                                including:
+                            </li>
+                            <ul>
+                                <li>Summarized clinical notes</li>
+                                <li>Rich consultation transcripts</li>
+                                <li>Transcript segmentation</li>
+                                <li>Evidence mapping</li>
+                                <li>Structured medical terms</li>
+                            </ul>
+                            <li>
+                                Link the above medical terms to concepts in RxNorm, ICD-10-CM, and SNOMED CT.
+                            </li>
+                            <li>
+                                <Link onFollow={() => navigate('/new')}>
+                                    Submit your own audio file to DR HealthScribe.
+                                </Link>
+                            </li>
+                            <li>
+                                <Link onFollow={() => navigate('/generate')}>Generate a multi-speaker audio file.</Link>{' '}
+                                
+                            </li>
+                        </ul>
+                    </TextContent>
+                    <iframe id="ytplayer" width="640" height="360"
+  src="https://www.youtube.com/embed/G_RLwSsAUtc?autoplay=1"
+  frameborder="0"></iframe>
+                    <Alert>Register for full functionality.</Alert>
+                </div>);
+
         }
     }
 
@@ -76,7 +120,9 @@ function Welcome() {
     }
 
     return (
+
         <ContentLayout header={<Header variant="h2">HealthScribe Demo Application</Header>}>
+
             <Container footer={<Footer />}>
                 <Content />
             </Container>

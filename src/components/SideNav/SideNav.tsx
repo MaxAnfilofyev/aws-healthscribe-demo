@@ -43,6 +43,7 @@ export default function SideNav({ activeHref }: SideNavProps) {
         {
             type: 'link',
             text: 'Diagnostic Robotics',
+
             href: 'https://www.diagnosticrobotics.com/',
             external: true,
         },
@@ -60,6 +61,7 @@ export default function SideNav({ activeHref }: SideNavProps) {
             external: true,
         },
         ***/
+
     ];
 
     return (

@@ -126,7 +126,7 @@ export default function TopNav() {
           }
         : {
               type: 'button',
-              text: 'Sign In',
+              text: 'Register and Sign In',
               onClick: () => setAuthVisible(true),
           };
 
@@ -138,6 +138,7 @@ export default function TopNav() {
             <TopNavigation
                 identity={{
                     href: '/',
+
                     title: 'DR HealthScribe Demo App',
                 }}
                 utilities={navUtils}

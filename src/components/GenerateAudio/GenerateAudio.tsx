@@ -186,7 +186,7 @@ export default function GenerateAudio() {
 
             const link = document.createElement('a');
             link.href = exportedAudio.url;
-            link.setAttribute('download', `AWS-HealthScribe-Demo-${dayjs().format('YYYY-MM-DD_HH-mm-ss')}.wav`);
+            link.setAttribute('download', `DR-HealthScribe-Demo-${dayjs().format('YYYY-MM-DD_HH-mm-ss')}.wav`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

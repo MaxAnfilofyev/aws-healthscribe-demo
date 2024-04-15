@@ -76,7 +76,7 @@ function DeleteModal({
                     </SpaceBetween>
                 </Box>
             }
-            header="Delete AWS HealthScribe Conversation"
+            header="Delete DR HealthScribe Conversation"
         >
             <p>
                 Permanently delete <strong>{selectedHealthScribeJob?.[0]?.MedicalScribeJobName || ''}</strong>. You

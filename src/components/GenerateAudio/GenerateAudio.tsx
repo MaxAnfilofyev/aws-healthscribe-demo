@@ -161,7 +161,7 @@ export default function GenerateAudio() {
         updateProgressBar({
             id: PROGRESS_BAR_ID,
             value: 0,
-            description: 'Audio generation using Amazon Polly in progress...',
+            description: 'Audio generation in progress...',
         });
         try {
             const conversationAudio: AudioBuffer[] = [];
@@ -217,11 +217,7 @@ export default function GenerateAudio() {
                     variant="h1"
                     description={
                         <>
-                            Use{' '}
-                            <Link external href="https://aws.amazon.com/polly">
-                                Amazon Polly
-                            </Link>{' '}
-                            to generate an audio file.
+                            Generate an audio file.
                         </>
                     }
                     actions={

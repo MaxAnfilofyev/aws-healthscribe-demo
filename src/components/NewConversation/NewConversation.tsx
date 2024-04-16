@@ -132,7 +132,7 @@ export default function NewConversation() {
         const uploadLocation = getUploadMetadata();
         const s3Location = {
             Bucket: uploadLocation.bucket,
-            Key: `${uploadLocation.key}/${(filePath as File).name}`,
+            Key: `${uploadLocation.key}/private/${(filePath as File).name}`,
         };
 
         const jobParams: StartMedicalScribeJobRequest = {
@@ -140,7 +140,7 @@ export default function NewConversation() {
             DataAccessRoleArn: amplifyCustom.healthScribeServiceRole,
             OutputBucketName: outputBucket,
             Media: {
-                MediaFileUri: `s3://${s3Location.Bucket}/private/${s3Location.Key}`,
+                MediaFileUri: `s3://${s3Location.Bucket}/${s3Location.Key}`,
             },
             ...audioParams,
         };

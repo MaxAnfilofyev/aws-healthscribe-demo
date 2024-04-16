@@ -5,7 +5,7 @@ import uuid4 from 'uuid4';
 import config from '@/amplifyconfiguration.json';
 
 export function useS3() {
-    const uploadKeyPrefix = 'uploads/HealthScribeDemo/';
+    const uploadKeyPrefix = 'private/uploads/HealthScribeDemo/';
 
     const bucketName = config.aws_user_files_s3_bucket;
     function getUploadMetadata() {

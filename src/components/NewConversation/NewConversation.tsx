@@ -43,7 +43,7 @@ export default function NewConversation() {
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // is job submitting
     const [formError, setFormError] = useState<string | React.ReactElement[]>('');
     const timestamp = new Date().getTime();
-    const conversationName = dayjs(timestamp).format('YY-MM-DD_hh:mm_A') + '_PatientName';
+    const conversationName = dayjs(timestamp).format('YY-MM-DD__hh_mmA') + '_PatientName';
     const [jobName, setJobName] = useState<string>(conversationName) ; // form - job name
     const [audioSelection, setAudioSelection] = useState<AudioSelection>('speakerPartitioning'); // form - audio selection
     // form - audio details
@@ -140,7 +140,7 @@ export default function NewConversation() {
             DataAccessRoleArn: amplifyCustom.healthScribeServiceRole,
             OutputBucketName: outputBucket,
             Media: {
-                MediaFileUri: `s3://${s3Location.Bucket}/${s3Location.Key}`,
+                MediaFileUri: `s3://${s3Location.Bucket}/private/${s3Location.Key}`,
             },
             ...audioParams,
         };
@@ -234,9 +234,7 @@ export default function NewConversation() {
                 </Header>
             }
         >
-            <Container
-
-            >
+            <Container>
                 <form onSubmit={(e) => submitJob(e)}>
                     <Form
                         errorText={formError}
@@ -279,7 +277,7 @@ export default function NewConversation() {
                                                 header="Live Recording"
 
                                                 content="The audio file will be submitted to DR HealthScribe after the recording is complete. Please position your device or microphone so it can capture all conversation participants."
-
+                                            >
                                                 <StatusIndicator type="info">New</StatusIndicator>
                                             </Popover>
                                         </Box>

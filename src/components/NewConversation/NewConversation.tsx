@@ -132,7 +132,7 @@ export default function NewConversation() {
         const uploadLocation = getUploadMetadata();
         const s3Location = {
             Bucket: uploadLocation.bucket,
-            Key: `${uploadLocation.key}/private/${(filePath as File).name}`,
+            Key: `private/${uploadLocation.key}/${(filePath as File).name}`,
         };
 
         const jobParams: StartMedicalScribeJobRequest = {
